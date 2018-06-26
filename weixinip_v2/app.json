@@ -1,0 +1,52 @@
+{
+    "pages": [
+      "pages/intro1/intro1",
+      "pages/index26/index26",
+      "pages/results26/results26",
+      "pages/index2/index2",
+      "pages/results2/results2",
+      "pages/about/about"
+    ],
+    "window": {
+      "navigationBarBackgroundColor": "#ffffff",
+      "navigationBarTextStyle": "black",
+      "navigationBarTitleText": "DeepSkin",
+      "backgroundColor": "#eeeeee",
+      "backgroundTextStyle": "light",
+      "enablePullDownRefresh": false
+    },
+    "debug": true,
+
+    "tabBar": {
+      "color": "#a9b7b7",
+      "selectedColor": "#11cd6e",
+      "borderStyle": "white",
+      "list": [
+        {
+          "selectedIconPath": "pages/imgs/规则说明 (1).png",
+          "iconPath": "pages/imgs/规则说明.png",
+          "pagePath": "pages/intro1/intro1",
+          "text": "产品介绍"
+        },
+        {
+          "selectedIconPath": "pages/imgs/医生 (1).png",
+          "iconPath": "pages/imgs/医生.png",
+          "pagePath": "pages/index26/index26",
+          "text": "26类诊断"
+        },
+        {
+          "selectedIconPath": "pages/imgs/放大镜 (1).png",
+          "iconPath": "pages/imgs/放大镜.png",
+          "pagePath": "pages/index2/index2",
+          "text": "黑色素瘤筛查"
+        },
+        {
+          "selectedIconPath": "pages/imgs/关于我们 (1).png",
+          "iconPath": "pages/imgs/关于我们.png",
+          "pagePath": "pages/about/about",
+          "text": "关于我们"
+        }
+      ]
+    }
+    
+}

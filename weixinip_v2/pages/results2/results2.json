@@ -1,0 +1,35 @@
+   { 
+
+      "navigationBarBackgroundColor": "#ffffff",
+      "navigationBarTextStyle": "black",
+      "navigationBarTitleText": "黑色素瘤筛查结果",
+      "backgroundColor": "#eeeeee",
+      "backgroundTextStyle": "light",
+      "enablePullDownRefresh": true,
+        
+        "tabBar": {
+          "color": "#a9b7b7",
+          "selectedColor": "#11cd6e",
+          "borderStyle": "white",
+          "list": [
+            {
+              "selectedIconPath": "pages/imgs/医生 (1).png",
+              "iconPath": "pages/imgs/医生.png",
+              "pagePath": "pages/index26/index26",
+              "text": "26类诊断"
+            },
+            {
+              "selectedIconPath": "pages/imgs/放大镜 (1).png",
+              "iconPath": "pages/imgs/放大镜.png",
+              "pagePath": "pages/index2/index2",
+              "text": "黑色素瘤筛查"
+            },
+            {
+              "selectedIconPath": "pages/imgs/关于我们 (1).png",
+              "iconPath": "pages/imgs/关于我们.png",
+              "pagePath": "pages/about/about",
+              "text": "关于我们"
+            }
+          ]
+        }
+   }
