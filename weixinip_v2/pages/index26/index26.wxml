@@ -1,10 +1,18 @@
-  <!-- pages/index/index.wxml  -->
+  <!-- pages/index26/index26.wxml  -->
  <view class='relative'> 
-        <image class="pic_background" src="b.jpg"></image>       
-      <image class="logo" src="takephoto.png"></image>    
-  <button class = 'button' style="margin:50rpx;" bindtap="chooseimage">照一照</button>   
- <image src="{{tempFilePaths }}" mode="aspecFill" style="width: 100%; height: 550rpx"/>   
+    
+      <image class="pic_background" src="../imgs/Group.png"></image>            
+      <image class="paizhao" src="../imgs/button.png" bindtap='chooseimage_camera' ></image>    
+      <text class="album" bindtap='chooseimage_album'>从相册选出</text>  
+      <image class='' src="" mode="aspecFill" style="width: 100%; height: 550rpx"></image>   
+  
 </view>   
+
+      <!-- <image class='paizhao'  scr="target.png"></image> -->
+  <!-- <button class = 'button' style="margin:50rpx;" bindtap="chooseimage">照一照</button>    -->
+
+
+
 
 
 

@@ -1,6 +1,5 @@
 {
     "pages": [
-      "pages/intro1/intro1",
       "pages/index26/index26",
       "pages/results26/results26",
       "pages/index2/index2",
@@ -22,12 +21,6 @@
       "selectedColor": "#11cd6e",
       "borderStyle": "white",
       "list": [
-        {
-          "selectedIconPath": "pages/imgs/规则说明 (1).png",
-          "iconPath": "pages/imgs/规则说明.png",
-          "pagePath": "pages/intro1/intro1",
-          "text": "产品介绍"
-        },
         {
           "selectedIconPath": "pages/imgs/医生 (1).png",
           "iconPath": "pages/imgs/医生.png",
