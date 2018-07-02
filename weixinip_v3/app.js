@@ -12,6 +12,6 @@ App({
       APIresult:'this is global data',
       tempfilepath:null,
       heatmap_adress:null,
-      server_ip: "http://192.168.245.129:5000"
+      server_ip: "http://34.232.80.4:5000"
     }   
 })

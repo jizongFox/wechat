@@ -9,6 +9,6 @@
 <view style="margin: 16px"></view>
 <i-card title="{{names[1]}}" extra="可能性：{{probs[1]}}" thumb="{{ip}}/image/get/{{names[1]}}">
     <view slot="content">"{{msg2[0]}}"</view>
-    <view slot="footer">"{{msg2[0]}}"</view>
+    <view slot="footer">"{{msg2[1]}}"</view>
 </i-card>
 
