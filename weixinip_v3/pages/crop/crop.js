@@ -29,8 +29,12 @@ Page({
    * 页面的初始数据
    */
   data: {
-    // imageSrc: 'https://lpd.hi-finance.com.cn/20170918001.jpg',
-    // 'https://lpd.hi-finance.com.cn/9019013.png'
+    switch1: false,
+    switch2: false,
+
+    last_month:'',
+
+
     imageSrc: '',
     returnImage: '',
     isShowImg: false,
@@ -63,14 +67,28 @@ Page({
    */
   onLoad: function (options) {
   },
+  onChange_1(event) {
+    const detail = event.detail;
+    this.setData({
+      'switch1': detail.value
+    })
+  },
+  onChange_2(event) {
+    const detail = event.detail;
+    this.setData({
+      'switch2': detail.value
+    })
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
     var gl_imageSrc = getApp().globalData.tempfilepath[0] 
+    var ip = getApp().globalData.server_ip
     this.setData({
-      imageSrc:gl_imageSrc
+      imageSrc:gl_imageSrc,
+      ip:ip
     })
     this.loadImage();
 
@@ -184,7 +202,6 @@ Page({
   getImageInfo() {
 
     var _this = this
-
     wx.showLoading({
       title: '图片生成中...',
     })
@@ -229,10 +246,7 @@ Page({
     util.showBusy('正在上传')
     const uploadTask = wx.uploadFile
     ({ 
-        // url: 'http://34.239.161.29:100/v_ensemble/predict',
-        // url: 'http://127.0.0.1:100/v_ensemble/predict',
-        // url: 'http://192.168.245.129:5000/v_ensemble_mul/predict',
-        url: 'http://192.168.245.129:5000/v_ensemble/predict',
+        url: _this.data.ip+'/v_ensemble/predict',
 
       filePath: tempFilePaths,
       name: 'file',
@@ -253,12 +267,6 @@ Page({
         console.log(err_update)
       }
     })
-    // uploadTask.onProgressUpdate
-    // ((res) => {
-    //   console.log('上传进度', res.progress)
-    //   console.log('已经上传的数据长度', res.totalBytesSent)
-    //   console.log('预期需要上传的数据总长度', res.totalBytesExpectedToSend)
-    // })
 
 
     },

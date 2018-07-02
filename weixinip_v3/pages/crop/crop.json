@@ -1,1 +1,12 @@
-{}
+{
+  "navigationBarTitleText": "截取病患处照片并回答问题",
+  "usingComponents": {
+    "i-button": "../../dist/button/index",
+    "i-switch": "../../dist/switch/index",
+    "i-icon": "../../dist/icon/index",
+    "i-cell-group": "../../dist/cell-group/index",
+    "i-cell": "../../dist/cell/index",
+    "i-panel": "../../dist/panel/index",
+    "i-input": "../../dist/input/index"
+  }
+}

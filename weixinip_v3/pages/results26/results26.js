@@ -4,43 +4,64 @@ Page({
   data: {
 
   },
- 
+  get_results_1: function (link) {
+    var that = this
+    var l = link
+    console.log(l)
+    wx.request({
+      method:"GET",
+      url: l, //仅为示例，并非真实的接口地址
+      success: function (res) {
+        console.log(res.data)
+        that.setData({ msg1: res.data})
+      },
+        fail: function (err) {
+        console.log(err)
+        }
+    })
+  },
+  get_results_2: function (link) {
+    var that = this
+    var l = link
+    console.log(l)
+    wx.request({
+      method: "GET",
+      url: l, //仅为示例，并非真实的接口地址
+      success: function (res) {
+        console.log(res.data)
+        that.setData({ msg2: res.data })
+      },
+      fail: function (err) {
+        console.log(err)
+      }
+    })
+  },
 
   onLoad: function (options) {
+    var ip = getApp().globalData.server_ip
+    this.setData({
+      ip: ip
+    })
     console.log('result on load')
     var _this = this
     var data = getApp().globalData.APIresult
-    // console.log(data['names'])
     var names = data['topk_labels']
     var probs = data['topk_probs']
+    var heatmap_adress = this.data.ip+"/heatmap/get/"+data['heatmap_adress']
+    var describ1 = this.data.ip+"/description/get/"+names[0]
+    var describ2 = this.data.ip+"/description/get/" + names[1]
+    
+    _this.get_results_1(describ1)
+    _this.get_results_2(describ2)
 
-    chart.draw(this, 'canvas1', {
-      title: {
-        text: "深度皮肤病医生诊断结果",
-        color: "#333333"
-      },
-      xAxis: {
-        data: [names[0], names[1], names[2]]
-      },
-      series: [
-        {
-          name: "",
-          category: "bar",
-          data: [Math.floor(parseFloat(probs[0])), Math.floor(parseFloat(probs[1])), Math.floor(parseFloat(probs[2]))]
-        },
-        // {
-        //   name: "",
-        //   category: "line",
-        //   // data: [20, 35, 38, 59, 48, 27, 43, 35]
-        //   data: [Math.floor(parseFloat(probs[0])), Math.floor(parseFloat(probs[1])), Math.floor(parseFloat(probs[2])), Math.floor(parseFloat(probs[3]))]
-        // },
-        // {
-        //   name: [names[0], names[1], names[2], names[3]],
-        //   category: "pie",
-        //   data: [parseFloat(probs[0]), parseFloat(probs[1]), parseFloat(probs[2]), parseFloat(probs[3])]
-        // }
-      ]
-    })
+    _this.setData(
+      {
+      heatmap_adress : heatmap_adress,
+      names : names,
+      probs : probs
+      }
+    )
+    console.log(_this.data)
 
 
   },

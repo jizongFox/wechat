@@ -1,6 +1,0 @@
-/* pages/results/results.wxss */
-.downloadChart{
-    position: absolute;
-  top: 900rpx;
-  right: 250rpx;
-}

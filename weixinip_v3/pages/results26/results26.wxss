@@ -1,6 +1,10 @@
 /* pages/results/results.wxss */
-.downloadChart{
-    position: absolute;
-  top: 900rpx;
-  right: 250rpx;
+.heatmap{
+  position: relative;
+  top:10%;
+  height: 300rpx;
+  width: 740rpx; 
+  margin-left:10rpx;
+  margin-top:10rpx;
+
 }

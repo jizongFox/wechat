@@ -13,54 +13,36 @@ Page({
     })
   },
   
-  chooseimage: function () {
+  chooseimage_camera: function () {
     var _this = this;
     wx.chooseImage({
+      sourceType: ['camera'],
       success: function (res) {
         getApp().globalData.tempfilepath = res.tempFilePaths
+        var tempFilePaths = res.tempFilePaths
         wx.navigateTo({
           url: '../../pages/crop/crop',
         })
-
-        // var tempFilePaths = res.tempFilePaths
-        // util.showBusy('正在上传')
-        // const uploadTask = wx.uploadFile
-        // ({ 
-        //     url: 'http://34.239.161.29:100/v_ensemble/predict',
-        //     // url: 'http://127.0.0.1:100/v_ensemble/predict',
-        //     // url: 'http://192.168.245.129:5000/v_ensemble_mul/predict',
-        //     // url: 'http://192.168.245.129:5000/v_ensemble/predict',
-            
-        //   filePath: tempFilePaths[0],
-        //   name: 'file',
-        //   formData: {
-        //     'user': 'test'
-        //   },
-        //   success: function (res_update) {
-
-        //     console.log(res_update)
-        //     var data = JSON.parse(res_update.data)
-        //     getApp().globalData.APIresult = data
-
-        //     wx.navigateTo({
-        //       url: '../../pages/results26/results26',
-        //     })
-        //   },
-        //   fail: function (err_update) {
-        //     console.log(err_update)
-        //   }
-        // })
-        //   uploadTask.onProgressUpdate((res) => {
-        //     console.log('上传进度', res.progress)
-        //     console.log('已经上传的数据长度', res.totalBytesSent)
-        //     console.log('预期需要上传的数据总长度', res.totalBytesExpectedToSend)
-        //   })
-
       },
-      fail: function(err){
+      fail: function (err) {
         console.log(err)
+      }
+    })
+  },
+  chooseimage_album: function () {
+    var _this = this;
+    wx.chooseImage({
+      sourceType: ['album'],
+      success: function (res) {
 
-
+        getApp().globalData.tempfilepath = res.tempFilePaths
+        var tempFilePaths = res.tempFilePaths
+        wx.navigateTo({
+          url: '../../pages/crop/crop',
+        })
+      },
+      fail: function (err) {
+        console.log(err)
       }
     })
   },  
@@ -68,6 +50,9 @@ Page({
   onLoad:function(options){
     // 页面初始化 options为页面跳转所带来的参数
     let that = this;
+    var ip = getApp().globalData.server_ip
+    that.setData({ip:ip})
+
     wx.getSystemInfo({
       success: function (res) {
         that.setData({
@@ -75,6 +60,7 @@ Page({
         })
       }
     })
+
   },
   onReady:function(){
     // 页面渲染完成

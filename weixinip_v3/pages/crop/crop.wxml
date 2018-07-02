@@ -28,5 +28,22 @@
     <!-- <view class="wx-cropper-drag-box"></view> -->
   </view>
   <canvas canvas-id="myCanvas" style="position:absolute;border: 1px solid red; width:{{qualityWidth}}px;height:{{qualityWidth/innerAspectRadio}}px;top:-9999px;left:-9999px;"></canvas>
-  <button type="primary" bindtap="getImageInfo" style="position:fixed;bottom:120rpx;width:30%;left:50%;transform:translate3d(-50%,0,0)"> 上传 </button>
+<i-cell-group>
+  <i-cell title="病患处是否发痒">
+          <i-switch value="{{switch1}}" size="large" bind:change="onChange_1" slot="footer">
+              <view slot="open">是</view>
+              <view slot="close">否</view>
+          </i-switch>
+      </i-cell>
+  <i-cell title="病患处是否疼痛">
+        <i-switch value="{{switch2}}" size="large" bind:change="onChange_2" slot="footer">
+              <view slot="open">是</view>
+              <view slot="close">否</view>
+        </i-switch>
+    </i-cell>
+</i-cell-group>
+<i-panel>
+    <i-input value="{{ last_month }}" title="持续时间" autofocus placeholder="天数（如持续7天、300天等）" />
+</i-panel>
+<i-button type="primary" bindtap="getImageInfo" style="position:fixed;bottom:30rpx;width:50%;left:50%;transform:translate3d(-50%,0,0)">确认截图并上传检测</i-button>
 </view>

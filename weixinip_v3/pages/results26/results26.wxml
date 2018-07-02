@@ -1,2 +1,14 @@
-<canvas canvas-id="canvas1" class="myCanvas" style="width:{{chartWidth}}px;height:{{chartHeight}}px;"/>
-<button class="downloadChart" bindtap="onSaveClick">保存图片</button>
+<image class="heatmap" src= "{{heatmap_adress}}" mode="aspectFit">
+</image>
+
+<view style="margin: 16px"></view>
+<i-card title="{{names[0]}}" extra="可能性：{{probs[0]}}" thumb="{{ip}}/image/get/{{names[0]}}">
+    <view slot="content">"{{msg1[0]}}"</view>
+    <view slot="footer">"{{msg1[1]}}"</view>
+</i-card>
+<view style="margin: 16px"></view>
+<i-card title="{{names[1]}}" extra="可能性：{{probs[1]}}" thumb="{{ip}}/image/get/{{names[1]}}">
+    <view slot="content">"{{msg2[0]}}"</view>
+    <view slot="footer">"{{msg2[0]}}"</view>
+</i-card>
+
