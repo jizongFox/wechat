@@ -5,7 +5,8 @@
     "pages/index2/index2",
     "pages/about/about",
     "pages/crop/crop",
-    "pages/test/test"
+    "pages/test/test",
+    "pages/online/online"
   ],
   "window": {
     "navigationBarBackgroundColor": "#ffffff",
@@ -38,6 +39,12 @@
         "iconPath": "pages/imgs/关于我们.png",
         "pagePath": "pages/about/about",
         "text": "关于我们"
+      },
+      {
+        "selectedIconPath": "pages/imgs/site_1.png",
+        "iconPath": "pages/imgs/site.png",
+        "pagePath": "pages/online/online",
+        "text": "在线版本"
       }
     ]
   }

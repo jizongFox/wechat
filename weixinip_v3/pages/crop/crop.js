@@ -32,7 +32,7 @@ Page({
     switch1: false,
     switch2: false,
 
-    last_month:'',
+    last_month: '',
 
 
     imageSrc: '',
@@ -65,8 +65,7 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-  },
+  onLoad: function(options) {},
   onChange_1(event) {
     const detail = event.detail;
     this.setData({
@@ -83,32 +82,17 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
-    var gl_imageSrc = getApp().globalData.tempfilepath[0] 
+  onReady: function() {
+    var gl_imageSrc = getApp().globalData.tempfilepath[0]
     var ip = getApp().globalData.server_ip
     this.setData({
-      imageSrc:gl_imageSrc,
-      ip:ip
+      imageSrc: gl_imageSrc,
+      ip: ip
     })
     this.loadImage();
 
   },
-  // getImage: function () {
-
-  //   var _this = this
-  //   wx.chooseImage({
-  //     success: function (res) {
-  //       _this.setData({
-  //         imageSrc: res.tempFilePaths[0],
-  //       })
-  //       _this.loadImage();
-  //     },
-  //   })
-  //   // wx.showToast({
-  //   //   title: 'sss',
-  //   // })
-  // },
-  loadImage: function () {
+  loadImage: function() {
     var _this = this
     wx.showLoading({
       title: '图片加载中...',
@@ -223,9 +207,9 @@ Page({
         destWidth: canvasW,
         destHeight: canvasH,
         fileType: 'jpg',
-        quality:1,
+        quality: 1,
         canvasId: 'myCanvas',
-        success: function (res) {
+        success: function(res) {
           wx.hideLoading()
           // 成功获得地址的地方
           console.log(res.tempFilePath)
@@ -240,20 +224,29 @@ Page({
     })
   },
 
-  upload: function () {
+  upload: function() {
     var _this = this;
     var tempFilePaths = getApp().globalData.tempfilepath;
     util.showBusy('正在上传')
-    const uploadTask = wx.uploadFile
-    ({ 
-        url: _this.data.ip+'/v_ensemble/predict',
+    var tp = getApp().globalData.type_of_diagnosis;
+    if (tp == 2) {
+      var url_ = _this.data.ip + '/v_2/predict';
+      getApp().globalData.url_ = url_
 
+    } else {
+      var url_ = _this.data.ip + '/v_ensemble/predict';
+      getApp().globalData.url_ = url_
+
+    }
+
+    wx.uploadFile({
+      url: getApp().globalData.url_,
       filePath: tempFilePaths,
       name: 'file',
       formData: {
         'user': 'test'
       },
-      success: function (res_update) {
+      success: function(res_update) {
 
         console.log(res_update)
         var data = JSON.parse(res_update.data)
@@ -263,13 +256,13 @@ Page({
           url: '../../pages/results26/results26',
         })
       },
-      fail: function (err_update) {
+      fail: function(err_update) {
         console.log(err_update)
       }
     })
 
 
-    },
+  },
 
   // 设置大小的时候触发的touchStart事件
   dragStart(e) {
@@ -301,8 +294,7 @@ Page({
             this.setData({
               cutW: initDragCutW - dragLength
             })
-          }
-          else {
+          } else {
             return
           }
         } else {
@@ -353,8 +345,7 @@ Page({
             this.setData({
               cutH: initDragCutH - dragLength
             })
-          }
-          else {
+          } else {
             return
           }
         } else {
@@ -377,8 +368,7 @@ Page({
             this.setData({
               cutW: initDragCutW - dragLengthX
             })
-          }
-          else {
+          } else {
             return
           }
         } else {
@@ -395,41 +385,40 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
-  },
+  onShow: function() {},
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
+  onHide: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
+  onUnload: function() {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
+  onPullDownRefresh: function() {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
+  onReachBottom: function() {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppMessage: function() {
 
   }
 })

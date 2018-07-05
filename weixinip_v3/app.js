@@ -12,6 +12,7 @@ App({
       APIresult:'this is global data',
       tempfilepath:null,
       heatmap_adress:null,
-      server_ip: "http://34.232.80.4:5000"
+      server_ip: "https://www.jizong.xyz",
+      type_of_diagnosis:null
     }   
 })

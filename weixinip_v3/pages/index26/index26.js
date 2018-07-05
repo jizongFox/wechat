@@ -18,6 +18,7 @@ Page({
     wx.chooseImage({
       sourceType: ['camera'],
       success: function (res) {
+        getApp().globalData.type_of_diagnosis = 26
         getApp().globalData.tempfilepath = res.tempFilePaths
         var tempFilePaths = res.tempFilePaths
         wx.navigateTo({
@@ -34,7 +35,7 @@ Page({
     wx.chooseImage({
       sourceType: ['album'],
       success: function (res) {
-
+        getApp().globalData.type_of_diagnosis = 26
         getApp().globalData.tempfilepath = res.tempFilePaths
         var tempFilePaths = res.tempFilePaths
         wx.navigateTo({
