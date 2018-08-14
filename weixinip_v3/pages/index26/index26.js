@@ -13,10 +13,10 @@ Page({
     })
   },
   
-  chooseimage_camera: function () {
+  chooseimage: function () {
     var _this = this;
     wx.chooseImage({
-      sourceType: ['camera'],
+      sourceType: ['camera','album'],
       success: function (res) {
         getApp().globalData.type_of_diagnosis = 26
         getApp().globalData.tempfilepath = res.tempFilePaths
@@ -30,23 +30,6 @@ Page({
       }
     })
   },
-  chooseimage_album: function () {
-    var _this = this;
-    wx.chooseImage({
-      sourceType: ['album'],
-      success: function (res) {
-        getApp().globalData.type_of_diagnosis = 26
-        getApp().globalData.tempfilepath = res.tempFilePaths
-        var tempFilePaths = res.tempFilePaths
-        wx.navigateTo({
-          url: '../../pages/crop/crop',
-        })
-      },
-      fail: function (err) {
-        console.log(err)
-      }
-    })
-  },  
 
   onLoad:function(options){
     // 页面初始化 options为页面跳转所带来的参数

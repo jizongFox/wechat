@@ -45,5 +45,5 @@
 <i-panel>
     <i-input value="{{ last_month }}" title="持续时间" autofocus placeholder="天数（如持续7天、300天等）" />
 </i-panel>
-<i-button type="primary" bindtap="getImageInfo" style="position:fixed;bottom:30rpx;width:50%;left:50%;transform:translate3d(-50%,0,0)">确认截图并上传检测</i-button>
+<i-button type="primary" bindtap="getImageInfo" style="position:absolute;width:50vw;left:50vw;transform:translate3d(-50%,0,0)">确认截图并上传检测</i-button>
 </view>

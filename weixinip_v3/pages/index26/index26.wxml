@@ -1,17 +1,7 @@
-  <!-- pages/index26/index26.wxml  -->
- <view class='relative'> 
-    
-      <image class="pic_background" src="../imgs/Group.png"></image>            
-      <image class="paizhao" src="../imgs/button.png" bindtap='chooseimage_camera' ></image>    
-      <text class="album" bindtap='chooseimage_album'>从相册选出</text>  
-      <image class='' src="" mode="aspecFill" style="width: 100%; height: 550rpx"></image>   
-  
-</view>   
-
-
-
-
-
-
-
-
+<!-- pages/index26/index26.wxml  -->
+<view class='relative'>
+  <image class="bg" src = '../imgs/home.png' style="background-image: url('../imgs/home.png');background-size: cover"> </image>
+  <view class='wrapper'>
+  <image class="paizhao" src="../imgs/button.png" bindtap='chooseimage'></image>
+  </view>
+</view>

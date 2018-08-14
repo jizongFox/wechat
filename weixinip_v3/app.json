@@ -1,12 +1,10 @@
 {
   "pages": [
     "pages/index26/index26",
-    "pages/results26/results26",
-    "pages/index2/index2",
-    "pages/about/about",
+    "pages/results/results",
     "pages/crop/crop",
-    "pages/test/test",
-    "pages/online/online"
+    "pages/about/about",
+    "pages/privacy/privacy"
   ],
   "window": {
     "navigationBarBackgroundColor": "#ffffff",
@@ -29,22 +27,16 @@
         "text": "26类诊断"
       },
       {
-        "selectedIconPath": "pages/imgs/放大镜 (1).png",
-        "iconPath": "pages/imgs/放大镜.png",
-        "pagePath": "pages/index2/index2",
-        "text": "黑色素瘤筛查"
+        "selectedIconPath": "pages/imgs/privacy_1.png",
+        "iconPath": "pages/imgs/privacy.png",
+        "pagePath": "pages/privacy/privacy",
+        "text": "隐私策略"
       },
       {
         "selectedIconPath": "pages/imgs/关于我们 (1).png",
         "iconPath": "pages/imgs/关于我们.png",
         "pagePath": "pages/about/about",
         "text": "关于我们"
-      },
-      {
-        "selectedIconPath": "pages/imgs/site_1.png",
-        "iconPath": "pages/imgs/site.png",
-        "pagePath": "pages/online/online",
-        "text": "在线版本"
       }
     ]
   }

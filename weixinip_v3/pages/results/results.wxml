@@ -1,0 +1,30 @@
+<view class='bg' style="background-image: url(https://lg-c659vvm0-1255370544.cos.ap-shanghai.myqcloud.com/home.png);background-size: cover">
+
+<view class="container">
+  <image class="heatmap" src="{{heatmap_adress}}" mode="aspectFit">
+  </image>
+  <image class="original" src="{{photo_taken}}" mode="aspectFit">
+  </image>
+</view>
+<view class="texts">
+  <text class="e1">注意力机制</text>
+  <text class="e2">你的照片</text>
+</view>
+
+
+
+
+<view style="margin: 16px"></view>
+<i-card title="{{names[0]}}" extra="可能性：{{probs[0]}}" thumb="{{ip}}/image/get/{{names[0]}}">
+  <view slot="content">{{msg1[0]}}</view>
+  <view slot="footer">{{msg1[1]}}</view>
+  <view slot="footer">{{msg1[2]}}</view>
+</i-card>
+<view style="margin: 16px"></view>
+<i-card title="{{names[1]}}" extra="可能性：{{probs[1]}}" thumb="{{ip}}/image/get/{{names[1]}}">
+  <view slot="content">{{msg2[0]}}</view>
+  <view slot="footer">{{msg2[1]}}</view>
+  <view slot="footer">{{msg2[2]}}</view>
+</i-card>
+
+</view>

@@ -15,7 +15,7 @@
 	"miniprogramRoot": "./",
 	"qcloudRoot": "./server",
 	"compileType": "miniprogram",
-	"libVersion": "2.0.9",
+	"libVersion": "2.2.2",
 	"appid": "wxa5ae75d999c96f95",
 	"projectname": "Skin_AI_v3",
 	"condition": {

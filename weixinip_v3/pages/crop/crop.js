@@ -115,8 +115,8 @@ Page({
             // 裁剪框  宽高  
             cutW: windowWRPX - 100,
             cutH: windowWRPX / innerAspectRadio - 100,
-            // cutW: 300,
-            // cutH:300,
+            // cutW: 30,
+            // cutH:30,
             cutL: Math.ceil((windowWRPX - windowWRPX + 100) / 2),
             cutT: Math.ceil((windowWRPX / innerAspectRadio - (windowWRPX / innerAspectRadio - 100)) / 2),
             // 图片缩放值
@@ -135,10 +135,16 @@ Page({
             cropperL: Math.ceil((windowWRPX - windowWRPX * innerAspectRadio) / 2),
             cropperT: Math.ceil((windowWRPX - windowWRPX) / 2),
             // 裁剪框的宽高
-            cutW: windowWRPX * innerAspectRadio - 50,
+            // cutW: windowWRPX * innerAspectRadio - 50,
+            // cutH: 300,
+            // to have a fixed cutW and cutH
+            cutW: 300,
             cutH: 300,
-            cutL: Math.ceil((windowWRPX * innerAspectRadio - (windowWRPX * innerAspectRadio - 50)) / 2),
+            cutL: Math.ceil((windowWRPX * innerAspectRadio - (300)) / 2),
+            // cutL: Math.ceil((windowWRPX * innerAspectRadio - (windowWRPX * innerAspectRadio - 50)) / 2),
+
             cutT: Math.ceil((windowWRPX - 200) / 2),
+            cutT: Math.ceil((windowWRPX - 300) / 2),
             // 图片缩放值
             scaleP: res.width * pixelRatio / windowWRPX,
             // 图片原始宽度 rpx
@@ -240,7 +246,8 @@ Page({
     }
 
     wx.uploadFile({
-      url: getApp().globalData.url_,
+      // url: getApp().globalData.url_,
+      url: url_,
       filePath: tempFilePaths,
       name: 'file',
       formData: {
@@ -253,7 +260,7 @@ Page({
         getApp().globalData.APIresult = data
 
         wx.navigateTo({
-          url: '../../pages/results26/results26',
+          url: '../../pages/results/results',
         })
       },
       fail: function(err_update) {

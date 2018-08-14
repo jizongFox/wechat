@@ -1,0 +1,51 @@
+/* pages/results/results.wxss */
+.bg{
+  height: 100vh;
+  width:100vw;
+  position:absolute;  
+}
+.container {
+  display: flex;
+  width: 80%;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.heatmap {
+  height: 300rpx;
+  width: 250rpx;
+  margin-right: 3%;
+}
+
+.original {
+  height: 300rpx;
+  width: 250rpx;
+  margin-left: 3%;
+}
+
+.texts {
+  display: flex;
+  width: 80%;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.e1 {
+  font-family: "楷体";
+  width: 250rpx;
+  margin-left: 5%;
+  font-size: smaller;
+}
+
+.e2 {
+  font-family: "楷体";
+  width: 250rpx;
+  margin-left: 25%;
+  font-size: smaller;
+}
