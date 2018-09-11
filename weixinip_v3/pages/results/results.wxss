@@ -1,9 +1,26 @@
 /* pages/results/results.wxss */
+.layout{
+    height: 100vh;
+  width:100vw;
+  position:relative; 
+}
+
 .bg{
   height: 100vh;
   width:100vw;
   position:absolute;  
 }
+.wrapperti{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 20%;
+
+  /* width: 80%; */
+
+}
+
 .container {
   display: flex;
   width: 80%;
@@ -18,12 +35,14 @@
   height: 300rpx;
   width: 250rpx;
   margin-right: 3%;
+  /* margin-top: -5% */
 }
 
 .original {
   height: 300rpx;
   width: 250rpx;
-  margin-left: 3%;
+  margin-left: 5%;
+  /* margin-top: -5%; */
 }
 
 .texts {
@@ -34,6 +53,7 @@
   align-items: center;
   margin-left: 10%;
   margin-right: 10%;
+  margin-top: 5%;
 }
 
 .e1 {
@@ -48,4 +68,27 @@
   width: 250rpx;
   margin-left: 25%;
   font-size: smaller;
+}
+
+.next{
+  font-family: "楷体";
+  width: 250rpx;
+   
+}
+.card{
+    width: 100hw;
+    height: 100wh;
+    padding: 10px;
+    position: relative;
+
+    /* text-align: center; */
+    box-sizing: border-box;
+}
+
+.picture image {
+  border-radius: 50%;
+}
+.page{
+  position: fixed;
+  bottom: 0
 }

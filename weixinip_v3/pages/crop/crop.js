@@ -115,10 +115,12 @@ Page({
             // 裁剪框  宽高  
             cutW: windowWRPX - 100,
             cutH: windowWRPX / innerAspectRadio - 100,
-            // cutW: 30,
-            // cutH:30,
+            // cutW: 300,
+            // cutH: 300,
+            // cutL: Math.ceil((windowWRPX * innerAspectRadio - (300)) / 2),
             cutL: Math.ceil((windowWRPX - windowWRPX + 100) / 2),
             cutT: Math.ceil((windowWRPX / innerAspectRadio - (windowWRPX / innerAspectRadio - 100)) / 2),
+            // cutT: Math.ceil((windowWRPX - 300) / 2),
             // 图片缩放值
             scaleP: res.width * pixelRatio / windowWRPX,
             // 图片原始宽度 rpx
@@ -143,7 +145,7 @@ Page({
             cutL: Math.ceil((windowWRPX * innerAspectRadio - (300)) / 2),
             // cutL: Math.ceil((windowWRPX * innerAspectRadio - (windowWRPX * innerAspectRadio - 50)) / 2),
 
-            cutT: Math.ceil((windowWRPX - 200) / 2),
+            // cutT: Math.ceil((windowWRPX - 200) / 2),
             cutT: Math.ceil((windowWRPX - 300) / 2),
             // 图片缩放值
             scaleP: res.width * pixelRatio / windowWRPX,
@@ -218,7 +220,7 @@ Page({
         success: function(res) {
           wx.hideLoading()
           // 成功获得地址的地方
-          console.log(res.tempFilePath)
+          // console.log(res.tempFilePath)
           // wx.previewImage({
           //   current: '', // 当前显示图片的http链接
           //   urls: [res.tempFilePath] // 需要预览的图片http链接列表
@@ -244,7 +246,7 @@ Page({
       getApp().globalData.url_ = url_
 
     }
-
+    
     wx.uploadFile({
       // url: getApp().globalData.url_,
       url: url_,
@@ -254,8 +256,9 @@ Page({
         'user': 'test'
       },
       success: function(res_update) {
+        util.showBusy('正在诊断')
 
-        console.log(res_update)
+        // console.log(res_update)
         var data = JSON.parse(res_update.data)
         getApp().globalData.APIresult = data
 
@@ -264,7 +267,7 @@ Page({
         })
       },
       fail: function(err_update) {
-        console.log(err_update)
+        // console.log(err_update)
       }
     })
 

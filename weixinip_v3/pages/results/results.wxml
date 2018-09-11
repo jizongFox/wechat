@@ -1,30 +1,42 @@
-<view class='bg' style="background-image: url(https://lg-c659vvm0-1255370544.cos.ap-shanghai.myqcloud.com/home.png);background-size: cover">
+<view class='layout'>
+  <image class="bg" src='../imgs/home.png' style="background-image: url('../imgs/home.png');background-size: cover"> </image>
+  <view class='wrapperti'>
+    <view class="texts">
+      <text class="e1">注意力机制</text>
+      <text class="e2">你的照片</text>
+    </view>
+    <view class="container">
+      <image class="heatmap" src="{{heatmap_adress}}" mode="aspectFit">
+      </image>
+      <image class="original" src="{{photo_taken}}" mode="aspectFit">
+      </image>
+    </view>
+  </view>
 
-<view class="container">
-  <image class="heatmap" src="{{heatmap_adress}}" mode="aspectFit">
-  </image>
-  <image class="original" src="{{photo_taken}}" mode="aspectFit">
-  </image>
-</view>
-<view class="texts">
-  <text class="e1">注意力机制</text>
-  <text class="e2">你的照片</text>
-</view>
+  <view style="margin: 20%"></view>
 
+  <view class='card'>
+    <i-spin size="large" fix wx:if="{{ spinShow }}"></i-spin>
+    <i-card title="{{name}}" extra="可能性：{{prob}}" thumb="{{ip}}/image/get/{{name}}" i-card='picture'>
+      <view slot="content">{{msg[0]}}</view>
+      <view slot="footer">{{msg[1]}}</view>
+      <view slot="footer">{{msg[2]}}</view>
+    </i-card>
+  </view>
+  <view style="margin: 10%"></view>
 
+  <view class='page' style="position:fixed;width:100vw;left:50vw;margin-bottom:10vh;transform:translate3d(-50%,0,0)">
+    <i-page current="{{ current }}" total="3" bind:change="handleChange">
+      <view slot="prev">
+        <i-icon type="return"></i-icon>
+        上一种
+      </view>
+      <view slot="next">
+        下一种
+        <i-icon type="enter"></i-icon>
+      </view>
+    </i-page>
 
-
-<view style="margin: 16px"></view>
-<i-card title="{{names[0]}}" extra="可能性：{{probs[0]}}" thumb="{{ip}}/image/get/{{names[0]}}">
-  <view slot="content">{{msg1[0]}}</view>
-  <view slot="footer">{{msg1[1]}}</view>
-  <view slot="footer">{{msg1[2]}}</view>
-</i-card>
-<view style="margin: 16px"></view>
-<i-card title="{{names[1]}}" extra="可能性：{{probs[1]}}" thumb="{{ip}}/image/get/{{names[1]}}">
-  <view slot="content">{{msg2[0]}}</view>
-  <view slot="footer">{{msg2[1]}}</view>
-  <view slot="footer">{{msg2[2]}}</view>
-</i-card>
+  </view>
 
 </view>
